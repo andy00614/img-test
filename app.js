@@ -23,6 +23,8 @@ const observer = new IntersectionObserver(entries => {
     if (entry.isIntersecting) {
       const videoEl = entry.target;
 
+      console.log(`Video ${videoEl.id} 进入视口，开始加载...`)
+
       if (!videoEl.src) {
         const idx = parseInt(videoEl.id.split('-')[1], 10);
         videoEl.src = videos[idx].src;
